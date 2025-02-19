@@ -12,7 +12,7 @@ export const Search = () => {
 
     const { onChange } = useForm();
 
-    useFetch(`https://api.github.com/users/${userName}`)
+    useFetch(`https://api.github.com/users/${userName}`, `https://api.github.com/users/${userName}/repos`)
 
     console.log(state);
 

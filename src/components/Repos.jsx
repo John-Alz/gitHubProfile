@@ -1,8 +1,5 @@
 import React, { useContext } from 'react'
-import { use } from 'react'
-import { useFetch } from '../hooks/useFetch'
 import { GitHubProfileContext } from '../context/GitHubProfileContext'
-import { useEffect } from 'react'
 import { CardRepo } from './CardRepo'
 
 export const Repos = () => {
@@ -11,22 +8,8 @@ export const Repos = () => {
 
     const { userName, repos } = state;
 
-    const fetchDataRepos = async () => {
-        try {
-            const resp = await fetch(`https://api.github.com/users/${userName}/repos`);
-            const data = await resp.json();
-            dispatch({
-                type: 'set-repos',
-                payload: data
-            })
-        } catch (error) {
-            console.error(error)
-        }
-    };
+    console.log(state);
 
-    useEffect(() => {
-        fetchDataRepos();
-    }, [])
 
     return (
         <div className='w-[80%] m-auto'>
