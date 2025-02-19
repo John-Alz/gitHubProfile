@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { GitHubProfileContext } from "../context/GitHubProfileContext";
 import { useEffect } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (urlProfile) => {
 
     const [state, dispatch] = useContext(GitHubProfileContext)
 
-    const fetchData = async () => {
+    const fetchDataProfile = async () => {
         try {
-            const resp = await fetch(url);
+            const resp = await fetch(urlProfile);
             const data = await resp.json();
             dispatch({
                 type: 'set-profile',
@@ -17,11 +17,11 @@ export const useFetch = (url) => {
         } catch (error) {
             console.error(error)
         }
-    }
+    };
 
     useEffect(() => {
-        fetchData()
-    }, [url])
+        fetchDataProfile();
+    }, [urlProfile])
 
 
 }

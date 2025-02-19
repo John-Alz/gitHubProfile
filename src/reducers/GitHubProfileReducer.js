@@ -6,6 +6,8 @@ export const GitHubProfileReducer = (state, action) => {
             return { ...state, userName: action.payload };
         case 'set-profile':
             return { ...state, profile: action.payload };
+        case 'set-repos':
+            return { ...state, repos: action.payload };
         default:
             return state;
     }
