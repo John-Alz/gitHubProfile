@@ -10,7 +10,6 @@ export const Profile = () => {
 
     return (
         <div className=''>
-
             <div className='w-[80%] m-auto flex gap-5 items-end translate-y-[-55px]'>
                 <img className='w-[150px] rounded-2xl border-4 border-primary ' src={profile?.avatar_url} alt={profile?.name} />
                 <div className='bg-secondary flex px-2 py-4 rounded-xl h-[56px]'>
