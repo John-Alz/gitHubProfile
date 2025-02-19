@@ -5,6 +5,7 @@ import { GitHubProfileReducer } from '../reducers/GitHubProfileReducer'
 
 const initialState = {
     userName: '',
+    userNameChange: 'GitHub',
     profile: null,
     repos: []
 }
