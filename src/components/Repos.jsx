@@ -17,7 +17,7 @@ export const Repos = () => {
         setflag(prev => !prev)
     }
 
-    const visibleRepos = flag ? repos : repos.slice(0, 4);
+    const visibleRepos = flag ? repos : repos?.slice(0, 4);
 
     return (
         <div className='w-[90%] lg:w-[80%] m-auto'>
