@@ -11,8 +11,6 @@ export const Repos = () => {
 
     const { repos, profile } = state;
 
-    console.log(state);
-
     const showRepos = () => {
         setflag(prev => !prev)
     }

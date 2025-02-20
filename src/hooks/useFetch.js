@@ -21,7 +21,6 @@ export const useFetch = (urlProfile, urlRepos, urlSug) => {
                 fetch(urlRepos, { headers }),
                 fetch(urlSug, { headers })
             ]); const data = await Promise.all(resp.map(r => r.json()));
-            console.log(data);
             dispatch({
                 type: 'set-data',
                 payload: { profile: data[0], repos: data[1], sug: data[2] }

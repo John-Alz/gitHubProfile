@@ -7,7 +7,7 @@ import { Repos } from './components/Repos'
 
 export const GithubProfileApp = () => {
     return (
-        <div className='font-primary text-white bg-primary '>
+        <div className='font-primary text-white bg-primary min-h-screen '>
             <GitHubProfileProvider>
                 <Header />
                 <Profile />
