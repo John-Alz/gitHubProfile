@@ -13,11 +13,11 @@ export const Repos = () => {
 
     console.log(state);
 
-    const showRepos = () => {
-        setflag(prev => !prev)
-    }
+    // const showRepos = () => {
+    //     setflag(prev => !prev)
+    // }
 
-    const visibleRepos = flag ? repos : repos?.slice(0, 4);
+    // const visibleRepos = flag ? repos : repos?.slice(0, 4);
 
     return (
         <div className='w-[90%] lg:w-[80%] m-auto'>
@@ -27,14 +27,14 @@ export const Repos = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {
-                    visibleRepos.map((repo) => (
+                    repos.map((repo) => (
                         <CardRepo key={repo.id} repo={repo} />
                     ))
                 }
             </div>
-            <div className='flex justify-center p-6'>
+            {/* <div className='flex justify-center p-6'>
                 <button className='cursor-pointer' onClick={showRepos}>{!flag ? 'View all respositories' : 'Hide repositories'}</button>
-            </div>
+            </div> */}
         </div>
     )
 }
