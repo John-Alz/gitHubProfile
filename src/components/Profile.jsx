@@ -9,8 +9,8 @@ export const Profile = () => {
     const { profile } = state;
 
     return (
-        <div className='w-[90%] lg:w-[80%] m-auto flex flex-wrap gap-5 items-end translate-y-[-55px]'>
-            <img className='w-[150px] rounded-2xl border-8 border-primary ' src={profile?.avatar_url} alt={profile?.name} />
+        <div className='w-[90%] lg:w-[80%] m-auto flex flex-wrap gap-5 items-end translate-y-[-45px]'>
+            <img className='w-[120px] rounded-2xl border-8 border-primary ' src={profile?.avatar_url} alt={profile?.name} />
             <div className='flex flex-wrap gap-5' >
 
                 <div className='bg-secondary flex px-2 py-4 rounded-xl h-[56px]'>
