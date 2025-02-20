@@ -36,8 +36,8 @@ export const Search = () => {
 
     return (
         <div className='p-10'>
-            <form onSubmit={(e) => { e.preventDefault(); onSubmit(formState.username) }} className='relative left-0 right-0 m-auto w-[500px]'>
-                <input onChange={onChange} name='username' value={formState.username} className=' bg-primary w-[500px] px-8 py-3 rounded-xl' type='text' placeholder='username' />
+            <form onSubmit={(e) => { e.preventDefault(); onSubmit(formState.username) }} className='relative left-0 right-0 m-auto w-full md:w-[500px]'>
+                <input onChange={onChange} name='username' value={formState.username} className=' bg-primary w-full  md:w-[500px] px-8 py-3 rounded-xl' type='text' placeholder='username' />
                 <img className='absolute top-3 left-1' src={'/Search.svg'} alt='search-icon' />
                 {
                     userNameSugestion && <div onClick={() => onSubmit(sugention.login)} className='flex gap-3 bg-secondary text-white mt-3 p-3 rounded-2xl  items-center cursor-pointer'>

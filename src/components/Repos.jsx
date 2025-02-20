@@ -9,7 +9,7 @@ export const Repos = () => {
 
     const [flag, setflag] = useState(false);
 
-    const { repos } = state;
+    const { repos, profile } = state;
 
     console.log(state);
 
@@ -20,8 +20,12 @@ export const Repos = () => {
     const visibleRepos = flag ? repos : repos.slice(0, 4);
 
     return (
-        <div className='w-[80%] m-auto'>
-            <div className='grid grid-cols-2 gap-4'>
+        <div className='w-[90%] lg:w-[80%] m-auto'>
+            <div className='mb-4 translate-y-[-40%]'>
+                <h2 className='text-3xl'>{profile?.name}</h2>
+                <p className='font-light'>{profile?.bio}</p>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {
                     visibleRepos.map((repo) => (
                         <CardRepo key={repo.id} repo={repo} />

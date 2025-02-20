@@ -9,9 +9,10 @@ export const Profile = () => {
     const { profile } = state;
 
     return (
-        <div className=''>
-            <div className='w-[80%] m-auto flex gap-5 items-end translate-y-[-55px]'>
-                <img className='w-[150px] rounded-2xl border-4 border-primary ' src={profile?.avatar_url} alt={profile?.name} />
+        <div className='w-[90%] lg:w-[80%] m-auto flex flex-wrap gap-5 items-end translate-y-[-55px]'>
+            <img className='w-[150px] rounded-2xl border-4 border-primary ' src={profile?.avatar_url} alt={profile?.name} />
+            <div className='flex flex-wrap gap-5' >
+
                 <div className='bg-secondary flex px-2 py-4 rounded-xl h-[56px]'>
                     <p className='border-r pr-3 pl-3'>Followers</p>
                     <p className='pr-3 pl-3'>{profile?.followers}</p>
