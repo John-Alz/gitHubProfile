@@ -6,27 +6,45 @@ import { useForm } from '../hooks/useForm'
 
 export const Search = () => {
 
-    const [state] = useContext(GitHubProfileContext)
+    const [state, dispatch] = useContext(GitHubProfileContext)
 
-    const { userName, profile } = state;
+    const { userName, userNameSugestion, sugention } = state;
 
-    const { onChange } = useForm();
+    const { formState, onChange, onReset } = useForm({
+        username: ''
+    });
 
-    useFetch(`https://api.github.com/users/${userName}`, `https://api.github.com/users/${userName}/repos`)
 
-    console.log(state);
+    const onSubmit = (name) => {
+        dispatch({
+            type: 'set-username',
+            payload: name
+        })
+        onReset()
+    }
+
+
+    useFetch(
+        `https://api.github.com/users/${userName}`,
+        `https://api.github.com/users/${userName}/repos`,
+        `https://api.github.com/users/${userNameSugestion}`
+    )
+
+
+
+
 
     return (
         <div className='p-10'>
-            <form className='relative left-0 right-0 m-auto w-[500px]'>
-                <input onChange={onChange} className=' bg-primary w-[500px] px-8 py-3 rounded-xl' type='text' placeholder='username' />
+            <form onSubmit={(e) => { e.preventDefault(); onSubmit(formState.username) }} className='relative left-0 right-0 m-auto w-[500px]'>
+                <input onChange={onChange} name='username' value={formState.username} className=' bg-primary w-[500px] px-8 py-3 rounded-xl' type='text' placeholder='username' />
                 <img className='absolute top-3 left-1' src={'/Search.svg'} alt='search-icon' />
                 {
-                    userName.length > 0 && <div className='flex gap-3 bg-secondary text-white mt-3 p-3 rounded-2xl  items-center'>
-                        <img className='w-[100px] rounded-2xl' src={profile?.avatar_url} />
+                    userNameSugestion && <div onClick={() => onSubmit(sugention.login)} className='flex gap-3 bg-secondary text-white mt-3 p-3 rounded-2xl  items-center cursor-pointer'>
+                        <img className='w-[100px] rounded-2xl' src={sugention?.avatar_url} />
                         <div>
-                            <p>{profile?.name}</p>
-                            <p className='text-quartiary'>{profile?.bio}</p>
+                            <p>{sugention?.name}</p>
+                            <p className='text-quartiary'>{sugention?.bio}</p>
                         </div>
                     </div>
                 }

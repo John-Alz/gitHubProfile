@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CardRepo = ({ repo }) => {
     return (
-        <div className='bg-linear-to-r from-cardP to-tertiary flex flex-col gap-3 p-4 rounded-2xl'>
+        <div className=' bg-linear-to-r from-cardP to-tertiary flex flex-col gap-3 p-4 rounded-2xl'>
             <h2 className='text-lg'>{repo.name}</h2>
             <p className='text-sm'>{repo.description}</p>
             <div className='flex gap-3'>
